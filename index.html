@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>Belajar Islam - Dasar-Dasar Agama Islam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="main-font bg-gradient-to-br from-emerald-50 to-blue-50 min-h-screen">
+    <!-- Optimized Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-emerald-600 to-blue-600 z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="loading-spinner w-16 h-16 mx-auto mb-6 border-4 border-white/30 border-t-white rounded-full"></div>
+            <div class="text-white text-xl font-bold mb-4">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+            <div class="text-white/90 mb-4">Memuat Pembelajaran Islam...</div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-2 h-2 bg-white rounded-full loading-dots"></div>
+                <div class="w-2 h-2 bg-white rounded-full loading-dots"></div>
+                <div class="w-2 h-2 bg-white rounded-full loading-dots"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ultra-Responsive Header -->
+    <header class="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-40 no-print">
+        <div class="max-w-7xl mx-auto container-responsive py-2 sm:py-3 lg:py-4">
+            <div class="flex items-center justify-between gap-2 sm:gap-4">
+                <!-- Logo and Title -->
+                <div class="flex items-center space-x-2 sm:space-x-3 fade-in min-w-0 flex-1">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-emerald-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
+                        <span class="text-white text-sm sm:text-xl lg:text-2xl">☪</span>
+                    </div>
+                    <div class="min-w-0">
+                        <h1 class="text-sm sm:text-base lg:text-xl font-bold text-gray-800 truncate">Belajar Islam</h1>
+                        <p class="text-xs text-gray-500 hidden sm:block lg:text-sm truncate">Pembelajaran Dasar Agama Islam</p>
+                    </div>
+                </div>
+                
+                <!-- Progress Indicators -->
+                <div class="flex items-center gap-1 sm:gap-2 lg:gap-3 flex-shrink-0">
+                    <div class="bg-emerald-100 px-1.5 sm:px-2 lg:px-3 py-1 sm:py-1.5 rounded-full shadow-sm fade-in-delay-1">
+                        <span class="text-emerald-700 text-xs sm:text-sm font-medium whitespace-nowrap">
+                            <span class="hidden sm:inline lg:inline">Progress: </span><span id="overall-progress">0%</span>
+                        </span>
+                    </div>
+                    <div class="bg-purple-100 px-1.5 sm:px-2 lg:px-3 py-1 sm:py-1.5 rounded-full shadow-sm fade-in-delay-1">
+                        <span class="text-purple-700 text-xs sm:text-sm font-medium whitespace-nowrap">
+                            <span class="hidden sm:inline lg:inline">Selesai: </span><span id="completed-count">0</span>/12
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto container-responsive py-4 sm:py-6 lg:py-8">
+        <!-- Ultra-Responsive Hero Section -->
+        <section class="text-center mb-4 sm:mb-6 lg:mb-10 xl:mb-12 bg-gradient-to-br from-emerald-50 to-blue-50 rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-12">
+            <div class="fade-in mb-3 sm:mb-4 lg:mb-6">
+                <h2 class="hero-title font-bold text-gray-800 mb-2 sm:mb-3 lg:mb-4">
+                    <span class="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
+                        Selamat Datang
+                    </span>
+                </h2>
+                <h3 class="hero-subtitle font-semibold text-gray-700 mb-3 sm:mb-4 lg:mb-6">
+                    di Pembelajaran Islam Interaktif
+                </h3>
+            </div>
+            
+            <div class="fade-in-delay-1 mb-4 sm:mb-6">
+                <div class="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-emerald-600 mb-3 sm:mb-4 font-bold leading-tight">
+                    بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+                </div>
+                <p class="text-gray-600 italic text-xs sm:text-sm lg:text-base px-2">
+                    "Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang"
+                </p>
+            </div>
+            
+            <div class="fade-in-delay-2 mb-6 sm:mb-8">
+                <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed text-sm sm:text-base px-2">
+                    Pelajari dasar-dasar agama Islam dengan cara yang menarik dan interaktif. 
+                    Mulai dari sejarah hingga hukum-hukum dasar Islam dengan pendekatan modern dan mudah dipahami.
+                </p>
+            </div>
+            
+            <div class="fade-in-delay-3 mb-4 sm:mb-6 lg:mb-8 flex justify-center">
+                <button onclick="startLearning()" class="btn-primary text-xs sm:text-sm lg:text-base px-4 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-full shadow-lg focus-visible">
+                    <span class="flex items-center justify-center space-x-1.5 sm:space-x-2">
+                        <span class="text-base sm:text-lg lg:text-xl">🕌</span>
+                        <span class="font-bold">Mulai Belajar Sekarang</span>
+                        <span class="hidden sm:inline">→</span>
+                    </span>
+                </button>
+            </div>
+            
+            <div class="fade-in-delay-3 grid grid-cols-3 gap-2 sm:gap-3 lg:gap-4 max-w-xs sm:max-w-sm lg:max-w-lg mx-auto">
+                <div class="bg-white/80 rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4 shadow-md">
+                    <div class="text-base sm:text-lg lg:text-xl font-bold text-emerald-600">12+</div>
+                    <div class="text-xs sm:text-sm text-gray-600">Topik Sejarah</div>
+                </div>
+                <div class="bg-white/80 rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4 shadow-md">
+                    <div class="text-base sm:text-lg lg:text-xl font-bold text-blue-600">11</div>
+                    <div class="text-xs sm:text-sm text-gray-600">Rukun Agama</div>
+                </div>
+                <div class="bg-white/80 rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4 shadow-md">
+                    <div class="text-base sm:text-lg lg:text-xl font-bold text-purple-600">6</div>
+                    <div class="text-xs sm:text-sm text-gray-600">Akhlak Mulia</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Navigation Tabs -->
+        <div id="navigation-tabs" class="flex justify-center mb-6 sm:mb-8 hidden">
+            <div class="bg-white/90 rounded-xl p-2 shadow-lg w-full max-w-lg mx-4">
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="showSection('sejarah')" id="tab-sejarah" class="tab-button active px-3 sm:px-4 py-3 sm:py-4 rounded-lg font-medium bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-md text-xs sm:text-sm lg:text-base transition-all duration-300 focus-visible min-h-[44px] flex items-center justify-center micro-bounce">
+                        <span class="flex items-center space-x-1 sm:space-x-2">
+                            <span class="text-lg">📚</span>
+                            <span class="truncate font-bold">Sejarah Islam</span>
+                        </span>
+                    </button>
+                    <button onclick="showSection('hukum')" id="tab-hukum" class="tab-button px-3 sm:px-4 py-3 sm:py-4 rounded-lg font-medium text-gray-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 hover:text-white transition-all duration-300 text-xs sm:text-sm lg:text-base focus-visible min-h-[44px] flex items-center justify-center micro-bounce">
+                        <span class="flex items-center space-x-1 sm:space-x-2">
+                            <span class="text-lg">⚖️</span>
+                            <span class="truncate font-bold">Hukum Islam</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Sejarah Islam Section -->
+        <section id="section-sejarah" class="hidden">
+            <div class="bg-white/95 rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8">
+                <div class="text-center mb-6 sm:mb-8">
+                    <h3 class="section-title font-bold text-gray-800 mb-3 sm:mb-4">📚 Sejarah Islam</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">Jelajahi perjalanan sejarah Islam dari awal hingga penyebarannya ke seluruh dunia</p>
+                </div>
+                
+                <div class="dynamic-grid">
+                    <!-- Kelahiran Islam -->
+                    <div class="card-hover card-stagger bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl p-4 sm:p-5 text-white cursor-pointer shadow-md relative transform-gpu focus-visible animate-on-scroll" onclick="showDetail('kelahiran')" data-topic="kelahiran" tabindex="0" role="button" aria-label="Pelajari tentang Kelahiran Islam" style="animation-delay: 0.1s">
+                        <div class="completion-badge absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-emerald-800 font-bold text-sm shadow-md hidden">✓</div>
+                        <div class="text-3xl sm:text-4xl mb-3 text-center">🕌</div>
+                        <h4 class="card-title font-bold mb-2 text-center">Kelahiran Islam</h4>
+                        <p class="text-emerald-100 text-center text-xs sm:text-sm mb-3 leading-relaxed">Awal mula turunnya Islam di Makkah pada abad ke-7 M</p>
+                        <div class="text-center">
+                            <span class="text-xs opacity-80">Klik untuk detail →</span>
+                        </div>
+                    </div>
+
+                    <!-- Nabi Muhammad -->
+                    <div class="card-hover card-stagger bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl p-5 text-white cursor-pointer shadow-md relative transform-gpu animate-on-scroll" onclick="showDetail('nabi')" data-topic="nabi" style="animation-delay: 0.2s">
+                        <div class="completion-badge absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-blue-800 font-bold text-sm shadow-md hidden">✓</div>
+                        <div class="text-4xl mb-3 text-center">👤</div>
+                        <h4 class="card-title font-bold mb-2 text-center">Nabi Muhammad SAW</h4>
+                        <p class="text-blue-100 text-center text-sm mb-3">Kehidupan dan perjuangan Rasulullah SAW</p>
+                        <div class="text-center">
+                            <span class="text-xs opacity-80">Klik untuk detail →</span>
+                        </div>
+                    </div>
+
+                    <!-- Hijrah -->
+                    <div class="card-hover card-stagger bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl p-5 text-white cursor-pointer shadow-md relative transform-gpu animate-on-scroll" onclick="showDetail('hijrah')" data-topic="hijrah" style="animation-delay: 0.3s">
+                        <div class="completion-badge absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-indigo-800 font-bold text-sm shadow-md hidden">✓</div>
+                        <div class="text-4xl mb-3 text-center">🐪</div>
+                        <h4 class="card-title font-bold mb-2 text-center">Hijrah ke Madinah</h4>
+                        <p class="text-indigo-100 text-center text-sm mb-3">Perpindahan bersejarah dari Makkah ke Madinah</p>
+                        <div class="text-center">
+                            <span class="text-xs opacity-80">Klik untuk detail →</span>
+                        </div>
+                    </div>
+
+                    <!-- Perang-perang Islam -->
+                    <div class="card-hover card-stagger bg-gradient-to-br from-red-500 to-red-700 rounded-xl p-5 text-white cursor-pointer shadow-md relative transform-gpu animate-on-scroll" onclick="showDetail('perang')" data-topic="perang" style="animation-delay: 0.4s">
+                        <div class="completion-badge absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-red-800 font-bold text-sm shadow-md hidden">✓</div>
+                        <div class="text-4xl mb-3 text-center">⚔️</div>
+                        <h4 class="card-title font-bold mb-2 text-center">Perang-perang Islam</h4>
+                        <p class="text-red-100 text-center text-sm mb-3">Perang Badr, Uhud, Khandaq dan lainnya</p>
+                        <div class="text-center">
+                            <span class="text-xs opacity-80">Klik untuk detail →</span>
+                        </div>
+                    </div>
+
+                    <!-- Fathu Makkah -->
+                    <div class="card-hover card-stagger bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-xl p-5 text-white cursor-pointer shadow-md relative transform-gpu animate-on-scroll" onclick="showDetail('fathu')" data-topic="fathu" style="animation-delay: 0.5s">
+                        <div class="completion-badge absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full flex items-center justify-center text-yellow-800 font-bold text-sm shadow-md hidden">✓</div>
+                        <div class="text-4xl mb-3 text-center">🏆</div>
+                        <h4 class="card-title font-bold mb-2 text-center">Fathu Makkah</h4>
+                        <p class="text-yellow-100 text-center text-sm mb-3">Penaklukan Makkah yang damai dan bersejarah</p>
+                        <div class="text-center">
+                            <span class="text-xs opacity-80">Klik untuk detail →</span>
+                        </div>
+                    </div>
+
+                    <!-- Khulafaur Rasyidin -->
+                    <div class="card-hover card-stagger bg-gradient-to-br from-orange-500 to-orange-700 rounded-xl p-5 text-white cursor-pointer shadow-md relative transform-gpu animate-on-scroll" onclick="showDetail('khalifah')" data-topic="khalifah" style="animation-delay: 0.6s">
+                        <div class="completion-badge absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-orange-800 font-bold text-sm shadow-md hidden">✓</div>
+                        <div class="text-4xl mb-3 text-center">👑</div>
+                        <h4 class="card-title font-bold mb-2 text-center">Khulafaur Rasyidin</h4>
+                        <p class="text-orange-100 text-center text-sm mb-3">Empat khalifah pertama setelah Nabi SAW</p>
+                        <div class="text-center">
+                            <span class="text-xs opacity-80">Klik untuk detail →</span>
+                        </div>
+                    </div>
+
+                    <!-- Dinasti Umayyah -->
+                    <div class="card-hover card-stagger bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-xl p-5 text-white cursor-pointer shadow-md relative transform-gpu animate-on-scroll" onclick="showDetail('umayyah')" data-topic="umayyah" style="animation-delay: 0.7s">
+                        <div class="completion-badge absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-cyan-800 font-bold text-sm shadow-md hidden">✓</div>
+                        <div class="text-4xl mb-3 text-center">🏛️</div>
+                        <h4 class="card-title font-bold mb-2 text-center">Dinasti Umayyah</h4>
+                        <p class="text-cyan-100 text-center text-sm mb-3">Dinasti Islam pertama (661-750 M)</p>
+                        <div class="text-center">
+                            <span class="text-xs opacity-80">Klik untuk detail →</span>
+                        </div>
+                    </div>
+
+                    <!-- Dinasti Abbasiyah -->
+                    <div class="card-hover card-stagger bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl p-5 text-white cursor-pointer shadow-md relative transform-gpu animate-on-scroll" onclick="showDetail('abbasiyah')" data-topic="abbasiyah" style="animation-delay: 0.8s">
+                        <div class="completion-badge absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-violet-800 font-bold text-sm shadow-md hidden">✓</div>
+                        <div class="text-4xl mb-3 text-center">📚</div>
+                        <h4 class="card-title font-bold mb-2 text-center">Dinasti Abbasiyah</h4>
+                        <p class="text-violet-100 text-center text-sm mb-3">Masa keemasan peradaban Islam</p>
+                        <div class="text-center">
+                            <span class="text-xs opacity-80">Klik untuk detail →</span>
+                        </div>
+                    </div>
+
+                    <!-- Penyebaran Islam -->
+                    <div class="card-hover card-stagger bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl p-5 text-white cursor-pointer shadow-md relative transform-gpu animate-on-scroll" onclick="showDetail('penyebaran')" data-topic="penyebaran" style="animation-delay: 0.9s">
+                        <div class="completion-badge absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-purple-800 font-bold text-sm shadow-md hidden">✓</div>
+                        <div class="text-4xl mb-3 text-center">🌍</div>
+                        <h4 class="card-title font-bold mb-2 text-center">Penyebaran Islam</h4>
+                        <p class="text-purple-100 text-center text-sm mb-3">Bagaimana Islam menyebar ke seluruh dunia</p>
+                        <div class="text-center">
+                            <span class="text-xs opacity-80">Klik untuk detail →</span>
+                        </div>
+                    </div>
+
+                    <!-- Islam di Nusantara -->
+                    <div class="card-hover card-stagger bg-gradient-to-br from-green-500 to-green-700 rounded-xl p-5 text-white cursor-pointer shadow-md relative transform-gpu animate-on-scroll" onclick="showDetail('nusantara')" data-topic="nusantara" style="animation-delay: 1.0s">
+                        <div class="completion-badge absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-green-800 font-bold text-sm shadow-md hidden">✓</div>
+                        <div class="text-4xl mb-3 text-center">🏝️</div>
+                        <h4 class="card-title font-bold mb-2 text-center">Islam di Nusantara</h4>
+                        <p class="text-green-100 text-center text-sm mb-3">Masuknya Islam ke Indonesia dan Asia Tenggara</p>
+                        <div class="text-center">
+                            <span class="text-xs opacity-80">Klik untuk detail →</span>
+                        </div>
+                    </div>
+
+                    <!-- Al-Quran -->
+                    <div class="card-hover card-stagger bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl p-5 text-white cursor-pointer shadow-md relative transform-gpu animate-on-scroll" onclick="showDetail('quran')" data-topic="quran" style="animation-delay: 1.1s">
+                        <div class="completion-badge absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-teal-800 font-bold text-sm shadow-md hidden">✓</div>
+                        <div class="text-4xl mb-3 text-center">📖</div>
+                        <h4 class="card-title font-bold mb-2 text-center">Al-Quran</h4>
+                        <p class="text-teal-100 text-center text-sm mb-3">Kitab suci umat Islam dan sejarah penulisannya</p>
+                        <div class="text-center">
+                            <span class="text-xs opacity-80">Klik untuk detail →</span>
+                        </div>
+                    </div>
+
+                    <!-- Masjidil Haram -->
+                    <div class="card-hover card-stagger bg-gradient-to-br from-rose-500 to-rose-700 rounded-xl p-5 text-white cursor-pointer shadow-md relative transform-gpu animate-on-scroll" onclick="showDetail('masjid')" data-topic="masjid" style="animation-delay: 1.2s">
+                        <div class="completion-badge absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-rose-800 font-bold text-sm shadow-md hidden">✓</div>
+                        <div class="text-4xl mb-3 text-center">🕋</div>
+                        <h4 class="card-title font-bold mb-2 text-center">Masjidil Haram</h4>
+                        <p class="text-rose-100 text-center text-sm mb-3">Sejarah Ka'bah dan Masjidil Haram</p>
+                        <div class="text-center">
+                            <span class="text-xs opacity-80">Klik untuk detail →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hukum Islam Section -->
+        <section id="section-hukum" class="hidden">
+            <div class="bg-white/95 rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">⚖️ Hukum-Hukum Islam</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Pelajari rukun Islam, rukun iman, hukum syariat, dan berbagai aspek kehidupan Muslim</p>
+                </div>
+                
+                <div class="space-y-8">
+                    <!-- Rukun Islam & Rukun Iman -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Rukun Islam -->
+                        <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl p-6 border border-emerald-200">
+                            <h4 class="text-xl font-bold text-emerald-800 mb-6 flex items-center">
+                                <span class="mr-3 text-2xl">🕌</span> Rukun Islam
+                            </h4>
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3 p-3 bg-white/80 rounded-lg">
+                                    <span class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">1</span>
+                                    <div>
+                                        <h5 class="font-bold text-gray-800">Syahadat</h5>
+                                        <p class="text-gray-600 text-sm">Mengucapkan dua kalimat syahadat</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-3 bg-white/80 rounded-lg">
+                                    <span class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">2</span>
+                                    <div>
+                                        <h5 class="font-bold text-gray-800">Shalat</h5>
+                                        <p class="text-gray-600 text-sm">Melaksanakan shalat lima waktu</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-3 bg-white/80 rounded-lg">
+                                    <span class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">3</span>
+                                    <div>
+                                        <h5 class="font-bold text-gray-800">Zakat</h5>
+                                        <p class="text-gray-600 text-sm">Menunaikan zakat</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-3 bg-white/80 rounded-lg">
+                                    <span class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">4</span>
+                                    <div>
+                                        <h5 class="font-bold text-gray-800">Puasa</h5>
+                                        <p class="text-gray-600 text-sm">Berpuasa di bulan Ramadhan</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-3 bg-white/80 rounded-lg">
+                                    <span class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">5</span>
+                                    <div>
+                                        <h5 class="font-bold text-gray-800">Haji</h5>
+                                        <p class="text-gray-600 text-sm">Menunaikan ibadah haji bagi yang mampu</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rukun Iman -->
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200">
+                            <h4 class="text-xl font-bold text-blue-800 mb-6 flex items-center">
+                                <span class="mr-3 text-2xl">💎</span> Rukun Iman
+                            </h4>
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3 p-3 bg-white/80 rounded-lg">
+                                    <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">1</span>
+                                    <div>
+                                        <h5 class="font-bold text-gray-800">Iman kepada Allah</h5>
+                                        <p class="text-gray-600 text-sm">Percaya kepada Allah SWT</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-3 bg-white/80 rounded-lg">
+                                    <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">2</span>
+                                    <div>
+                                        <h5 class="font-bold text-gray-800">Iman kepada Malaikat</h5>
+                                        <p class="text-gray-600 text-sm">Percaya kepada malaikat-malaikat Allah</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-3 bg-white/80 rounded-lg">
+                                    <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">3</span>
+                                    <div>
+                                        <h5 class="font-bold text-gray-800">Iman kepada Kitab</h5>
+                                        <p class="text-gray-600 text-sm">Percaya kepada kitab-kitab Allah</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-3 bg-white/80 rounded-lg">
+                                    <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">4</span>
+                                    <div>
+                                        <h5 class="font-bold text-gray-800">Iman kepada Rasul</h5>
+                                        <p class="text-gray-600 text-sm">Percaya kepada rasul-rasul Allah</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-3 bg-white/80 rounded-lg">
+                                    <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">5</span>
+                                    <div>
+                                        <h5 class="font-bold text-gray-800">Iman kepada Hari Akhir</h5>
+                                        <p class="text-gray-600 text-sm">Percaya kepada hari kiamat</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-3 bg-white/80 rounded-lg">
+                                    <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">6</span>
+                                    <div>
+                                        <h5 class="font-bold text-gray-800">Iman kepada Qada dan Qadar</h5>
+                                        <p class="text-gray-600 text-sm">Percaya kepada takdir Allah</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hukum Taklifi -->
+                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 border border-orange-200">
+                        <h4 class="text-xl font-bold text-orange-800 mb-6 flex items-center justify-center">
+                            <span class="mr-3 text-2xl">📜</span> Hukum Taklifi (Lima Hukum Syariat)
+                        </h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                            <div class="bg-white/80 p-4 rounded-lg text-center">
+                                <div class="text-3xl mb-2">✅</div>
+                                <h5 class="font-bold text-gray-800 mb-2">Wajib</h5>
+                                <p class="text-gray-600 text-sm">Harus dilakukan</p>
+                            </div>
+                            <div class="bg-white/80 p-4 rounded-lg text-center">
+                                <div class="text-3xl mb-2">⭐</div>
+                                <h5 class="font-bold text-gray-800 mb-2">Sunnah</h5>
+                                <p class="text-gray-600 text-sm">Dianjurkan</p>
+                            </div>
+                            <div class="bg-white/80 p-4 rounded-lg text-center">
+                                <div class="text-3xl mb-2">⚪</div>
+                                <h5 class="font-bold text-gray-800 mb-2">Mubah</h5>
+                                <p class="text-gray-600 text-sm">Boleh dilakukan</p>
+                            </div>
+                            <div class="bg-white/80 p-4 rounded-lg text-center">
+                                <div class="text-3xl mb-2">⚠️</div>
+                                <h5 class="font-bold text-gray-800 mb-2">Makruh</h5>
+                                <p class="text-gray-600 text-sm">Tidak disukai</p>
+                            </div>
+                            <div class="bg-white/80 p-4 rounded-lg text-center">
+                                <div class="text-3xl mb-2">❌</div>
+                                <h5 class="font-bold text-gray-800 mb-2">Haram</h5>
+                                <p class="text-gray-600 text-sm">Dilarang keras</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Akhlak Islam -->
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200">
+                        <h4 class="text-xl font-bold text-purple-800 mb-6 flex items-center justify-center">
+                            <span class="mr-3 text-2xl">🌟</span> Akhlak Mulia dalam Islam
+                        </h4>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                            <div class="bg-white/80 p-4 rounded-lg text-center">
+                                <div class="text-3xl mb-2">🤝</div>
+                                <h5 class="font-bold text-gray-800 mb-1">Jujur</h5>
+                                <p class="text-gray-600 text-xs">Berkata benar</p>
+                            </div>
+                            <div class="bg-white/80 p-4 rounded-lg text-center">
+                                <div class="text-3xl mb-2">❤️</div>
+                                <h5 class="font-bold text-gray-800 mb-1">Kasih Sayang</h5>
+                                <p class="text-gray-600 text-xs">Menyayangi sesama</p>
+                            </div>
+                            <div class="bg-white/80 p-4 rounded-lg text-center">
+                                <div class="text-3xl mb-2">🙏</div>
+                                <h5 class="font-bold text-gray-800 mb-1">Sabar</h5>
+                                <p class="text-gray-600 text-xs">Menghadapi cobaan</p>
+                            </div>
+                            <div class="bg-white/80 p-4 rounded-lg text-center">
+                                <div class="text-3xl mb-2">💝</div>
+                                <h5 class="font-bold text-gray-800 mb-1">Dermawan</h5>
+                                <p class="text-gray-600 text-xs">Suka membantu</p>
+                            </div>
+                            <div class="bg-white/80 p-4 rounded-lg text-center">
+                                <div class="text-3xl mb-2">🕊️</div>
+                                <h5 class="font-bold text-gray-800 mb-1">Pemaaf</h5>
+                                <p class="text-gray-600 text-xs">Mudah memaafkan</p>
+                            </div>
+                            <div class="bg-white/80 p-4 rounded-lg text-center">
+                                <div class="text-3xl mb-2">⚖️</div>
+                                <h5 class="font-bold text-gray-800 mb-1">Adil</h5>
+                                <p class="text-gray-600 text-xs">Berlaku adil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Detail Modal -->
+        <div id="detail-modal" class="modal-backdrop fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-50 flex items-center justify-center p-2 sm:p-4">
+            <div id="modal-inner" class="modal-content bg-white rounded-xl sm:rounded-2xl max-w-4xl w-full shadow-xl">
+                <div class="p-4 sm:p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 id="modal-title" class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 flex-1 pr-4"></h3>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl sm:text-3xl font-light transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center focus-visible" aria-label="Tutup modal">&times;</button>
+                    </div>
+                    <div id="modal-content" class="text-gray-600 leading-relaxed text-sm sm:text-base"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- Optimized Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 to-emerald-900 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Left Section -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                            <span class="text-white text-2xl">☪</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Belajar Islam</h3>
+                            <p class="text-gray-300 text-sm">Pembelajaran Dasar Agama Islam</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 leading-relaxed">
+                        Platform pembelajaran Islam interaktif yang dirancang untuk membantu umat Muslim memahami dasar-dasar agama Islam dengan cara yang modern dan mudah dipahami.
+                    </p>
+                    
+                    <div class="bg-yellow-500/20 border border-yellow-500/30 rounded-xl p-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                                <span class="text-gray-900 font-bold">🚧</span>
+                            </div>
+                            <div>
+                                <h4 class="text-yellow-300 font-bold mb-2">Website Dalam Pengembangan</h4>
+                                <p class="text-yellow-100 text-sm">
+                                    Kami terus mengembangkan fitur-fitur baru untuk memberikan pengalaman pembelajaran yang lebih baik.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Section - Info -->
+                <div class="bg-white/10 rounded-2xl p-6 border border-white/20">
+                    <div class="text-center mb-6">
+                        <h4 class="text-xl font-bold text-white mb-2">📚 Tentang Website</h4>
+                        <p class="text-gray-300 text-sm">Informasi tentang platform pembelajaran Islam ini</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white/5 rounded-lg p-4">
+                            <h5 class="text-white font-semibold mb-2 flex items-center">
+                                <span class="mr-2">🎯</span> Tujuan
+                            </h5>
+                            <p class="text-gray-300 text-sm">
+                                Membantu umat Muslim memahami dasar-dasar agama Islam dengan cara yang interaktif dan mudah dipahami.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white/5 rounded-lg p-4">
+                            <h5 class="text-white font-semibold mb-2 flex items-center">
+                                <span class="mr-2">📖</span> Materi
+                            </h5>
+                            <p class="text-gray-300 text-sm">
+                                Sejarah Islam, Rukun Islam, Rukun Iman, Hukum Syariat, dan Akhlak Mulia dalam Islam.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white/5 rounded-lg p-4">
+                            <h5 class="text-white font-semibold mb-2 flex items-center">
+                                <span class="mr-2">🌟</span> Fitur
+                            </h5>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Pembelajaran interaktif</li>
+                                <li>• Progress tracking</li>
+                                <li>• Desain responsif</li>
+                                <li>• Konten berkualitas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+                <div class="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
+                    <!-- Status and Version -->
+                    <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                            <span class="text-gray-300">Status: Dalam Pengembangan</span>
+                        </div>
+                        <div class="flex items-center space-x-4 text-xs text-gray-400">
+                            <span>Versi 1.0.0-beta</span>
+                            <span>•</span>
+                            <span>Build 2025.01</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Info -->
+                    <div class="text-center lg:text-right">
+                        <div class="flex flex-wrap items-center justify-center lg:justify-end space-x-1 text-xs text-gray-400">
+                            <span>Konten berdasarkan sumber-sumber Islam yang terpercaya</span>
+                            <span class="hidden sm:inline">•</span>
+                            <span>Untuk tujuan pendidikan dan dakwah</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Islamic Footer -->
+                <div class="mt-6 pt-4 border-t border-white/10 text-center">
+                    <div class="text-emerald-300 text-lg mb-2 font-arabic">
+                        رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ
+                    </div>
+                    <p class="text-gray-400 text-xs italic">
+                        "Ya Tuhan kami, terimalah (amal) dari kami. Sesungguhnya Engkaulah Yang Maha Mendengar lagi Maha Mengetahui"
+                    </p>
+                    <p class="text-gray-500 text-xs mt-2">
+                        Semoga Allah SWT memberikan keberkahan dalam setiap ilmu yang dipelajari
+                    </p>
+                </div>
+                
+                <!-- Copyright - Bottom -->
+                <div class="mt-6 pt-4 border-t border-white/10 text-center">
+                    <p class="text-gray-300 text-sm mb-1">
+                        © 2025 <span class="font-semibold text-white">Belajar Islam</span> - Platform Pembelajaran Islam Interaktif
+                    </p>
+                    <p class="text-gray-400 text-xs">
+                        Hak Cipta Dilindungi. Dibuat dengan dedikasi untuk kemajuan pendidikan Islam di Indonesia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
